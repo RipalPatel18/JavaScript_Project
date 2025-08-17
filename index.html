@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+  <title>Digital Wardrobe and Outfit Planner</title>
+
+  <!-- Google Fonts for better typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <!-- ===== Header Section ===== -->
+  <header class="app-header">
+    <h1>Digital Wardrobe</h1>
+    <p>Organize your clothes and plan your outfits with ease!</p>
+  </header>
+
+  <!-- ===== Main Content Section ===== -->
+  <main class="app-main-content">
+    <section class="app-section">
+
+      <!-- ===== Add New Item Form ===== -->
+      <h2 class="section-title">Add New Item</h2>
+      <!-- Form for adding new wardrobe items -->
+      <form id="addItemForm" class="add-item-form" novalidate>
+        
+        <!-- Item Name Input -->
+        <div>
+          <label for="itemName">Item Name</label>
+          <input type="text" id="itemName" name="itemName" placeholder="e.g., Blue Jeans" required/>
+          <span class="validation-error" aria-live="polite"></span> 
+        </div>
+
+        <!-- Item Type Dropdown -->
+        <div>
+          <label for="itemType">Type</label>
+          <select id="itemType" name="itemType" required>
+            <option value="">Select Type</option>
+            <option value="Top">Top</option>
+            <option value="Bottom">Bottom</option>
+            <option value="Dress">Dress</option>
+            <option value="Outerwear">Outerwear</option>
+            <option value="Shoes">Shoes</option>
+            <option value="Accessory">Accessory</option>
+            <option value="Other">Other</option>
+          </select>
+          <span class="validation-error" aria-live="polite"></span>
+        </div>
+
+        <!-- Item Color Input -->
+        <div>
+          <label for="itemColor">Color</label>
+          <input type="text" id="itemColor" name="itemColor" placeholder="e.g., Blue, Black" required/>
+          <span class="validation-error" aria-live="polite"></span>
+        </div>
+
+        <!-- Season Dropdown -->
+        <div>
+          <label for="itemSeason">Season</label>
+          <select id="itemSeason" name="itemSeason" required>
+            <option value="">Select Season</option>
+            <option value="All">All Seasons</option>
+            <option value="Spring">Spring</option>
+            <option value="Summer">Summer</option>
+            <option value="Autumn">Autumn</option>
+            <option value="Winter">Winter</option>
+          </select>
+          <span class="validation-error" aria-live="polite"></span>
+        </div>
+
+        <!-- Image Upload Input -->
+        <div class="full-width-input">
+          <label for="itemImage">Image</label>
+          <input type="file" id="itemImage" name="itemImage" accept="image/*" required/>
+          <span class="validation-error" aria-live="polite"></span>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-button add-item-button">Add Item to Wardrobe</button>
+      </form>
+
+      <!-- ===== Wardrobe Display ===== -->
+      <h2 class="section-title">Your Wardrobe</h2>
+      <!-- Container where wardrobe items will be displayed dynamically -->
+      <div id="wardrobeDisplay" class="wardrobe-display scrollable-content" aria-live="polite" aria-label="Wardrobe items"></div>
+    </section>
+  </main>
+
+  <!-- ===== Modal for Messages & Confirmations ===== -->
+  <div id="messageModal" class="message-modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalMessage">
+    <div class="modal-content">
+      <p id="modalMessage" class="modal-message"></p> <!-- Message text goes here -->
+      <div id="modalButtons" class="modal-buttons">
+        <!-- Optional confirmation button (hidden by default) -->
+        <button id="modalConfirmBtn" class="modal-confirm-button hidden">Confirm</button>
+        <!-- Close button to dismiss modal -->
+        <button id="modalCloseBtn" class="modal-close-button">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Link to external JavaScript file for functionality -->
+  <script src="script.js"></script>
+</body>
+</html>

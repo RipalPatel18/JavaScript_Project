@@ -1,0 +1,287 @@
+/* ========== Global Settings ========== */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f0f9ff;
+  color: #1e293b;
+  margin: 0;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  min-height: 100vh;
+}
+
+/* ========== Header ========== */
+.app-header {
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.app-header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #0f766e;
+  margin-bottom: 0.5rem;
+}
+
+.app-header p {
+  font-size: 1.2rem;
+  color: #475569;
+}
+
+/* ========== Layout ========== */
+.app-main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+@media (min-width: 1024px) {
+  .app-main-content {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .app-section {
+    width: 50%;
+  }
+}
+
+/* ========== Section Styles ========== */
+.app-section {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  width: 100%;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #0f766e;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 0.5rem;
+}
+
+/* ========== Form Styles ========== */
+.add-item-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.25rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .add-item-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .full-width-input,
+  .add-item-button {
+    grid-column: span 2;
+  }
+}
+
+.add-item-form label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  display: block;
+  color: #334155;
+}
+
+.add-item-form input[type="text"],
+.add-item-form select,
+.add-item-form input[type="file"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  background-color: #f8fafc;
+  font-size: 1rem;
+}
+
+.add-item-form input:focus,
+.add-item-form select:focus {
+  outline: none;
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.3);
+}
+
+.validation-error {
+  color: #dc2626;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  min-height: 1.2em;
+}
+
+/* ========== Button Styles ========== */
+.submit-button {
+  background: linear-gradient(to right, #0ea5e9, #0284c7);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.9rem 1.5rem;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.submit-button:hover {
+  background: linear-gradient(to right, #0284c7, #0369a1);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ========== Wardrobe Grid ========== */
+.wardrobe-display {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem;
+  max-height: 28rem;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  scrollbar-width: thin;
+  scrollbar-color: #94d3f5 #f0f9ff;
+}
+
+.wardrobe-display::-webkit-scrollbar {
+  width: 8px;
+}
+.wardrobe-display::-webkit-scrollbar-track {
+  background: #f0f9ff;
+  border-radius: 10px;
+}
+.wardrobe-display::-webkit-scrollbar-thumb {
+  background-color: #94d3f5;
+  border-radius: 10px;
+  border: 2px solid #f0f9ff;
+}
+
+/* ========== Wardrobe Item Card ========== */
+.wardrobe-item {
+  background-color: #ffffff;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  transition: transform 0.2s, box-shadow 0.2s;
+  user-select: none;
+}
+
+.wardrobe-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-color: #bae6fd;
+}
+
+.item-image {
+  width: 90%;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e2e8f0;
+  background-color: #ffffff;
+}
+
+.wardrobe-item p {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0.25rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Smaller details text for type, color, season */
+.wardrobe-item .item-details {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #64748b;
+  margin: 0;
+}
+
+/* ========== Delete Button ========== */
+.delete-item-btn {
+  font-size: 0.85rem;
+  color: #dc2626;
+  background-color: #fee2e2;
+  border: none;
+  padding: 0.4rem 0.9rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.delete-item-btn:hover {
+  background-color: #fecaca;
+  color: #b91c1c;
+  transform: translateY(-1px);
+}
+
+/* ========== Modal ========== */
+.message-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.6);
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  max-width: 90%;
+  min-width: 280px;
+}
+
+.modal-message {
+  font-size: 1rem;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.modal-close-button,
+.modal-confirm-button {
+  background-color: #0ea5e9;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  min-width: 80px;
+}
+
+.modal-close-button:hover,
+.modal-confirm-button:hover {
+  background-color: #0284c7;
+}
+
+.hidden {
+  display: none;
+}
