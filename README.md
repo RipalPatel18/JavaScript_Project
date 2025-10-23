@@ -58,11 +58,3 @@ This app is perfect for anyone who:
 - 📊 Analytics to see your most-used clothing items.  
 - 🌈 Dark mode toggle for better usability.  
 
----
-
-## 👩‍💻 Author
-
-**Ripal Patel**  
-🎓 Humber College — Web Development Program  
-💼 [GitHub Profile](https://github.com/RipalPatel18)
-
