@@ -45,10 +45,6 @@ This app is perfect for anyone who:
 ## 🧱 Tech Stack (Planned)
 
 - **Frontend:** HTML, CSS, JavaScript (or React for dynamic UI)  
-- **Backend:** Node.js or Firebase (for image and data storage)  
-- **Database:** MongoDB / Firestore (for clothing details)  
-- **Hosting:** GitHub Pages or Vercel  
-
 ---
 
 ## 🚀 Future Enhancements
